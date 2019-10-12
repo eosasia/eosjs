@@ -931,6 +931,11 @@ export function createInitialTypes(): Map<string, Type> {
             serialize(buffer: SerialBuffer, data: string) { buffer.pushUint8ArrayChecked(hexToUint8Array(data), 32); },
             deserialize(buffer: SerialBuffer) { return arrayToHex(buffer.getUint8Array(32)); },
         }),
+        checksum256$: createType({
+            name: 'checksum256$',
+            serialize(buffer: SerialBuffer, data: string) { buffer.pushUint8ArrayChecked(hexToUint8Array(data), 32); },
+            deserialize(buffer: SerialBuffer) { return arrayToHex(buffer.getUint8Array(32)); },
+        }),
         checksum512: createType({
             name: 'checksum512',
             serialize(buffer: SerialBuffer, data: string) { buffer.pushUint8ArrayChecked(hexToUint8Array(data), 64); },
